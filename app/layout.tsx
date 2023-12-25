@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
+import { jaJP } from '@clerk/localizations'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider afterSignInUrl='/' afterSignUpUrl='/onboarding'>
+    <ClerkProvider localization={jaJP} afterSignInUrl='/' afterSignUpUrl='/onboarding'>
     <html lang="ja">
       <body className={inter.className}>{children}</body>
       </html>
